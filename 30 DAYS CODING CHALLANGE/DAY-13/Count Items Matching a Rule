@@ -1,0 +1,4 @@
+class Solution(object):
+    def countMatches(self, items, ruleKey, ruleValue):
+        key_index = {"type": 0, "color": 1, "name": 2}
+        return sum(item[key_index[ruleKey]] == ruleValue for item in items)
