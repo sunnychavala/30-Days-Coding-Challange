@@ -1,0 +1,17 @@
+class Solution(object):
+    def scoreOfParentheses(self, s):
+        stack = []
+        for char in s:
+            if char == '(':
+                stack.append(0)
+            else:
+                top = stack.pop()
+                if top == 0:
+                    stack.append(1) 
+                else:
+                    score = 0
+                    while top != 0:
+                        score += top
+                        top = stack.pop()
+                    stack.append(2 * score)
+        return sum(stack)
