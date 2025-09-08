@@ -1,0 +1,20 @@
+class MyStack(object):
+
+    def __init__(self):
+        self.stack = []
+
+    def push(self, x):
+        self.stack.append(x)
+
+    def pop(self):
+        if not self.empty():
+            return self.stack.pop()
+        return None 
+
+    def top(self):
+        if not self.empty():
+            return self.stack[-1]
+        return None
+
+    def empty(self):
+        return len(self.stack) == 0
